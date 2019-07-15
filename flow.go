@@ -28,5 +28,19 @@ func (f *Flow)do() {
 
 type Player struct {
 	ownCards []Card
+}
+type Tagmap map[Tag]int
+func (p *Player) calcTag() Tagmap{
+	tagmap:=make(map[Tag]int)
 
+	for _,v:=range p.ownCards{
+		for _,t:=range v.tags{
+			if _,ok:=tagmap[t];!ok{
+				tagmap[t]=1
+			}else{
+				tagmap[t]++
+			}
+		}
+	}
+	return tagmap
 }

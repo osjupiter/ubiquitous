@@ -159,7 +159,6 @@ type  Card struct{
 	name string
 	cardType CardType
 	tags []Tag
-
 }
 
 type Deck struct {

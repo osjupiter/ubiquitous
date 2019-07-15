@@ -49,4 +49,23 @@ func TestDeck(t *testing.T) {
 }
 
 
+func TestStatus(t *testing.T){
+	p:=Player{ownCards: []Card{
+		{name:"a",cardType:Weapon,tags: []Tag{PlusPower2,Shining}},
+		{name:"a",cardType:Wearable,tags: []Tag{Magic2,Shining}},
+		{name:"a",cardType:Accessory,tags: []Tag{Shining}},
+	}}
+	s:=p.calcTag()
 
+	if s[Shining]!=3{
+		t.Errorf("おかしい")
+	}
+	if s[Magic2]!=1{
+		t.Errorf("おかしい")
+	}
+	if s[PlusPower2]!=1{
+		t.Errorf("おかしい")
+	}
+
+
+}
