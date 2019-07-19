@@ -172,3 +172,16 @@ func (d *Deck) shuffle(){
 func (d *Deck) draw(num int)[]Card{
 	return d.pool[0:num]
 }
+
+type Buff int
+const(
+	Power2 Buff =iota
+	Power5
+	Power8
+	M2
+	M5
+	M8
+	HealOnAtk
+	DualAtk
+	Golden
+)

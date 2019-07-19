@@ -44,3 +44,37 @@ func (p *Player) calcTag() Tagmap{
 	}
 	return tagmap
 }
+func (p *Player) calcBuff(tagmap Tagmap) []Buff{
+	ret:=[]Buff{}
+	if tagmap[PlusPower2]>0{
+		ret=append(ret,Power2)
+	}
+	if tagmap[PlusPower5]>0{
+		ret=append(ret,Power5)
+	}
+	if tagmap[PlusPower5]>0{
+		ret=append(ret,Power5)
+	}
+	if tagmap[PlusPower8]>0{
+		ret=append(ret,Power8)
+	}
+	if tagmap[Magic2]>0{
+		ret=append(ret,M2)
+	}
+	if tagmap[Magic5]>0{
+		ret=append(ret,M5)
+	}
+	if tagmap[Magic8]>0{
+		ret=append(ret,M8)
+	}
+	if tagmap[Shining]>2{
+		ret=append(ret,HealOnAtk)
+	}
+	if tagmap[Dark]>2{
+		ret=append(ret,DualAtk)
+	}
+	if tagmap[Kingdom]>1{
+		ret=append(ret,Golden)
+	}
+	return ret
+}

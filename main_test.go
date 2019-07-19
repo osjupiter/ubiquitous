@@ -67,5 +67,24 @@ func TestStatus(t *testing.T){
 		t.Errorf("おかしい")
 	}
 
+	buffs:=p.calcBuff(s)
 
+	if !contains(buffs,Power2){
+		t.Errorf("おかしい")
+	}
+	if !contains(buffs,M2){
+		t.Errorf("おかしい")
+	}
+	if !contains(buffs,HealOnAtk){
+		t.Errorf("おかしい")
+	}
+
+}
+func contains(s []Buff, e Buff) bool {
+	for _, v := range s {
+		if e == v {
+			return true
+		}
+	}
+	return false
 }
